@@ -19,47 +19,55 @@
 		);
 
 		protected $response = array(
-			'request'	=> null,
-			'result'	=> null,
-			'datetime'	=> null
+			'request' => null,
+			'result' => null,
+			'datetime' => null
 		);
 
-		public function __construct(){
+		public function __construct()
+		{
 			$this->response['datetime'] = date('Y-m-d H:i:s');
 		}
 
-		public function header($key, $value){
+		public function header($key, $value)
+		{
 			$this->headers[$key] = $value;
 			return $this;
 		}
 
-		public function code($code){
+		public function code($code)
+		{
 			$this->code = $code;
 			return $this;
 		}
 
-		public function getCode(){
+		public function getCode()
+		{
 			return $this->code;
 		}
 
-		public function get($key){
-			if(isset($this->response[$key])){
+		public function get($key)
+		{
+			if (isset($this->response[$key])) {
 				return $this->response[$key];
 			}
 			return null;
 		}
 
-		public function set($key, $value){
+		public function set($key, $value)
+		{
 			$this->response[$key] = $value;
 			return $this;
 		}
 
-		public function getResponse(){
+		public function getResponse()
+		{
 			return $this->response;
 		}
 
-		public function sendHeaders(){
-			foreach($this->headers as $header_key => $header_value){
+		public function sendHeaders()
+		{
+			foreach ($this->headers as $header_key => $header_value) {
 				header("{$header_key}: {$header_value}", true, $this->code);
 			}
 			http_response_code($this->code);

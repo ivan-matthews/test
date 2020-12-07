@@ -7,50 +7,58 @@
 	class Maker implements Router
 	{
 		private $route = array(
-			'class'		=> '',
-			'action'	=> '',
-			'pattern'	=> '',
-			'mask'		=> '([a-z0-9]+)',
-			'modifier'	=> 'i',
-			'method'	=> 'GET',
+			'class' => '',
+			'action' => '',
+			'pattern' => '',
+			'mask' => '([a-z0-9]+)',
+			'modifier' => 'i',
+			'method' => 'GET',
 		);
 
-		public function __construct($method, $pattern){
+		public function __construct($method, $pattern)
+		{
 			$this->method($method);
 			$this->pattern($pattern);
 		}
 
-		public function class($value){
+		public function class($value)
+		{
 			$this->route['class'] = $value;
 			return $this;
 		}
 
-		public function action($value){
+		public function action($value)
+		{
 			$this->route['action'] = $value;
 			return $this;
 		}
 
-		public function pattern($value){
+		public function pattern($value)
+		{
 			$this->route['pattern'] = $value;
 			return $this;
 		}
 
-		public function mask($value){
+		public function mask($value)
+		{
 			$this->route['mask'] = $value;
 			return $this;
 		}
 
-		public function modifier($value){
+		public function modifier($value)
+		{
 			$this->route['modifier'] = $value;
 			return $this;
 		}
 
-		public function method($value){
+		public function method($value)
+		{
 			$this->route['method'] = strtoupper($value);
 			return $this;
 		}
 
-		public function getRoute(){
+		public function getRoute()
+		{
 			return $this->route;
 		}
 	}

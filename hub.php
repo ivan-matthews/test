@@ -27,7 +27,7 @@
 	function debug(...$data)
 	{
 		print '<pre>';
-		foreach($data as $item){
+		foreach ($data as $item) {
 			print_r($item);
 			print  '<hr>';
 		}

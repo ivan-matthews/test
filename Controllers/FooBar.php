@@ -11,12 +11,14 @@
 		protected $response;
 		protected $request;
 
-		public function __construct(Request $request, Response $response){
+		public function __construct(Request $request, Response $response)
+		{
 			$this->request = $request;
 			$this->response = $response;
 		}
 
-		public function item($number){
+		public function item($number)
+		{
 			settype($number, 'integer');
 			$this->response->set('request', $number);
 			$this->response->set('result', $this->getNumber($number));

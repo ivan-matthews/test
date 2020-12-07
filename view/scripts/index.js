@@ -1,20 +1,20 @@
 $(document).ready(function () {
-	$( "form[name=\"getNumber\"]" ).submit(function( event ) {
+	$("form[name=\"getNumber\"]").submit(function (event) {
 		event.preventDefault();
 		getNumber(this);
 	});
 });
 
-function getNumber(form){
+function getNumber(form) {
 	let formObject = $(form);
-	let number = $('input#text',formObject).val();
+	let number = $('input#text', formObject).val();
 
 	$.ajax({
 		url: '/foobar/' + number,
 		method: 'GET',
-		data: $(form).serialize(),
+		data: formObject.serialize(),
 		dataType: 'JSON',
-		success: function(response){
+		success: function (response) {
 			console.log(response);
 
 			let result_block = $('.result-block');
@@ -24,7 +24,7 @@ function getNumber(form){
 			result.text(response.result);
 			time.text(response.datetime);
 		},
-		error: function(error){
+		error: function (error) {
 			alert('Request failed!');
 		}
 	});
