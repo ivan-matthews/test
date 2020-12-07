@@ -1,0 +1,10 @@
+body .container {
+  background: #ffffff;
+  position: relative;
+}
+body .container .form-content {
+  margin-top: 20%;
+}
+body .container .form-content input[type="text"] {
+  background: #f7f7f7;
+}

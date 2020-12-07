@@ -38,6 +38,10 @@
 			return $this;
 		}
 
+		public function getCode(){
+			return $this->code;
+		}
+
 		public function get($key){
 			if(isset($this->response[$key])){
 				return $this->response[$key];

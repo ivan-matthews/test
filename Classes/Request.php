@@ -23,7 +23,7 @@
 		}
 
 		public function setRequestUri($request_uri){
-			$this->request_uri = $request_uri;
+			$this->request_uri = parse_url($request_uri)['path'];
 			return $this;
 		}
 

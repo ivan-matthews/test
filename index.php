@@ -20,4 +20,4 @@
 	$router->parseCurrentUrl();
 
 	$template = new View($request, $response);
-	$template->renderJSONContent();
+	$template->renderResponse();
