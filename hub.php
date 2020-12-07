@@ -24,9 +24,13 @@
 		return ROOT . '/' . $file_name;
 	}
 
-	function debug($data)
+	function debug(...$data)
 	{
 		print '<pre>';
-		print_r($data);
+		foreach($data as $item){
+			print_r($item);
+			print  '<hr>';
+		}
+		print '</pre>';
 		die;
 	}
